@@ -19,3 +19,7 @@ app.include_router(tatuadores.router)   # ← registra a nova rota
 @app.get("/")
 def inicio():
     return {"mensagem": "API do estúdio de tatuagem funcionando!"}
+
+from rotas import clientes, senioridade, tatuadores, agendamentos   # ← adiciona agendamentos aqui
+...
+app.include_router(agendamentos.router)   # ← registra a nova rota

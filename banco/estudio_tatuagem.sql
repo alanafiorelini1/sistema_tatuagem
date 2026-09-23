@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/09/2026 às 21:58
+-- Tempo de geração: 23/09/2026 às 04:05
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -46,8 +46,12 @@ CREATE TABLE `agendamento` (
 --
 
 INSERT INTO `agendamento` (`idagendamento`, `idcliente`, `idtatuador`, `dataagendamento`, `horaagendamento`, `descricaotatuagem`, `desenhoaprovado`, `valortatuagem`, `status`) VALUES
-(1, 1, 1, '2025-05-10', '14:00:00', 'Mandala no braço', NULL, 350.00, 'pendente'),
-(2, 2, 2, '2025-05-11', '10:00:00', 'Rosa aquarela no ombro', NULL, 200.00, 'pendente');
+(1, 1, 1, '2025-05-10', '14:00:00', 'Mandala no braço', NULL, 350.00, 'concluido'),
+(2, 2, 2, '2025-05-11', '10:00:00', 'Rosa aquarela no ombro', NULL, 200.00, 'confirmado'),
+(4, 1, 1, '2026-10-22', '16:00:00', 'Fênix nas costas segurando um arco', NULL, 480.00, 'pendente'),
+(5, 4, 1, '2026-10-21', '14:00:00', 'Tatuagem de pato', '5_100 Adorable Duck Tattoos You Will Want To Try - Tattoo Me Now.jpg', 120.00, 'concluido'),
+(6, 5, 2, '2026-03-05', '17:00:00', 'Tatuagem de gato', NULL, 200.00, 'pendente'),
+(7, 7, 2, '2023-05-16', '14:30:00', 'Coruja grande para tampar tatuagem antiga nas costas.', NULL, 550.00, 'pendente');
 
 -- --------------------------------------------------------
 
@@ -70,8 +74,11 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`idcliente`, `nome`, `cpf`, `telefone`, `datacadastro`, `cidade`, `uf`) VALUES
-(1, 'Ana Silva', '44444444444', '11988880001', '2024-01-15', 'São Paulo', 'SP'),
-(2, 'Bruno Costa', '55555555555', '31988880002', '2024-03-22', 'Belo Horizonte', 'MG');
+(1, 'Ana Costa', '44444444444', '11988880001', '2026-09-23', 'São Paulo', 'SP'),
+(2, 'Bruno Costa', '55555555555', '31988880002', '2024-03-22', 'Belo Horizonte', 'MG'),
+(4, 'João Henrique', '48952602178', '1198520489', '2026-09-18', 'Jundiaí', 'SP'),
+(5, 'Alana', '48915602178', '11985621478', '2026-09-18', 'Jundiaí', 'SP'),
+(7, 'Janaina Maria', '78945628512', '11645872302', '2026-09-23', 'Mauá', 'SP');
 
 -- --------------------------------------------------------
 
@@ -136,8 +143,9 @@ CREATE TABLE `tatuador` (
 
 INSERT INTO `tatuador` (`idtatuador`, `nometatuador`, `cpf`, `email`, `telefone`, `datacontratacao`, `idsenioridade`) VALUES
 (1, 'Lucas Mendes', '11111111111', 'lucas@estudio.com', '11999990001', '2020-03-01', 3),
-(2, 'Carla Souza', '22222222222', 'carla@estudio.com', '11999990002', '2022-06-15', 2),
-(3, 'Pedro Lima', '33333333333', 'pedro@estudio.com', '11999990003', '2024-01-10', 1);
+(2, 'Carla Souza', '22222222222', 'carla@estudio.com', '11999990002', '2026-09-23', 3),
+(3, 'Pedro Lima', '33333333333', 'pedro@estudio.com', '11999990003', '2024-01-10', 1),
+(5, 'Alan Silva', '44444444444', 'alan@gmail.com', '11999999004', '2026-09-23', 2);
 
 -- --------------------------------------------------------
 
@@ -215,13 +223,13 @@ ALTER TABLE `tatuador_estilo`
 -- AUTO_INCREMENT de tabela `agendamento`
 --
 ALTER TABLE `agendamento`
-  MODIFY `idagendamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idagendamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `estilo`
@@ -233,13 +241,13 @@ ALTER TABLE `estilo`
 -- AUTO_INCREMENT de tabela `senioridade`
 --
 ALTER TABLE `senioridade`
-  MODIFY `idsenioridade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idsenioridade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `tatuador`
 --
 ALTER TABLE `tatuador`
-  MODIFY `idtatuador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idtatuador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para tabelas despejadas

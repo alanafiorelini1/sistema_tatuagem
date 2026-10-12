@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27/09/2026 às 06:30
+-- Tempo de geração: 12/10/2026 às 02:34
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -193,7 +193,10 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`idusuario`, `nome`, `email`, `senha`, `tipo`, `idcliente`) VALUES
 (1, 'alana', 'alana@gmail.com', '$2b$12$fsKseZhJCivpFtCk3Cy.jeSjPC4srasexGnJKpT0clwV/16OPYI6C', 'funcionario', NULL),
-(3, 'joao', 'joao@gmail.com', '$2b$12$79ppkgcN9OTh7CvGBj2tB.YIaQrqgpQCWiJjCO7y6MtRFMfR5CFy.', 'funcionario', NULL);
+(3, 'joao', 'joao@gmail.com', '$2b$12$79ppkgcN9OTh7CvGBj2tB.YIaQrqgpQCWiJjCO7y6MtRFMfR5CFy.', 'funcionario', NULL),
+(5, 'Administrador', 'admin@estudio.com', '$2b$12$sS0YZjaJjknBbd9H83aEie0buCai.gqnSpJ4BvBnH7WlnpuJ5I.o2', 'admin', NULL),
+(6, 'teste', 'teste@gmail.com', '$2b$12$qb9ctulDugVVqfAzqSSAOOxuFEcuFSUiCxE8ryBYfSMmqkn/kBa06', 'funcionario', NULL),
+(7, 'diogo', 'diogo@gmail.com', '$2b$12$8e61gObz5B5NY7SkPf/4cuzK6i//8i5KZIiY/Eyu/ma0s7I0oyQzm', 'funcionario', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -287,7 +290,7 @@ ALTER TABLE `tatuador`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para tabelas despejadas

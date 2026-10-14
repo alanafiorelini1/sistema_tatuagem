@@ -1,0 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:'Courier New', Courier, monospace
+}
+
+h1, h2 {
+    font-family: 'Eagle Lake', cursive;
+}

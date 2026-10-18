@@ -1,11 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family:'Courier New', Courier, monospace
+    font-family: 'Google Sans', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
 }
 
-h1, h2 {
+p,
+a {
+    font-family: 'Google Sans', sans-serif;
+    font-optical-sizing: auto;
+}
+
+h1,
+h2 {
     font-family: 'Eagle Lake', cursive;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.texto-baixo {
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+.menu {
+    background-color: rgba(13, 13, 13, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topo {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to bottom, #0d0d0d 0%, rgba(13, 13, 13, 0.4) 30%, rgba(13, 13, 13, 0.4) 70%, #0d0d0d 100%),
+        url('../img/background.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.texto-baixo {
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: #d1d1d1;
+    text-transform: uppercase;
+}
+
+.botao-estilizado {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #ffffff;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #ffffff;
+}
+
+.botao-estilizado:hover {
+    color: #0d0d0d;
+    box-shadow: inset 0 -100px 0 0 #ffffff;
+}
+
+.botao-estilizado:active {
+    transform: scale(0.9);
+}
+
+.secao {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.subtitulo-secao {
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    color: #888888;
+    text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+    .col-lg-2-4 {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
+
+.card-tatuador {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px;
+    background-color: #121212;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-tatuador:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.foto-tatuador {
+    height: 380px;
+    background-color: #1a1a1a;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.card-tatuador:hover .foto-tatuador {
+    background-color: #252525;
+}
+
+.iniciais-tatuador {
+    font-family: 'Eagle Lake', cursive;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.25);
+    margin-bottom: 50px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card-tatuador:hover .iniciais-tatuador {
+    color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.overlay-card {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
+    text-align: center;
+}
+
+.nome-tatuador {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0;
+    color: #ffffff;
+}
+
+.estilo-tatuador {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+    margin-top: 3px;
+    margin-bottom: 8px;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.redes-sociais a {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.redes-sociais a:hover {
+    color: #ffffff;
+}
+
+.card-estilo {
+    padding: 30px 20px;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.card-estilo:hover {
+    transform: translateY(-5px);
+}
+
+.icone-estilo {
+    color: #ffffff;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-estilo {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.descricao-estilo {
+    font-size: 0.85rem;
+    color: #888888;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    min-height: 80px;
+}
+
+.link-estilo {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.link-estilo:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+    letter-spacing: 3px;
+}
+
+.mosaico-referencia {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media (min-width: 768px) {
+    .mosaico-referencia {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        align-items: stretch;
+    }
+}
+
+.coluna-mosaico {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+}
+
+.item-mosaico {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: #1a1a1a;
+}
+
+.item-pequeno {
+    height: 320px;
+}
+
+.item-grande {
+    height: 520px;
+}
+
+.item-mosaico img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.8);
+    transition: transform 0.4s ease, filter 0.4s ease;
+    display: block;
+}
+
+.item-mosaico:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%) brightness(1);
 }

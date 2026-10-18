@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1, h2 {
+    font-family: 'Eagle Lake', cursive;
+}
+
+#bloco-status {
+    display: none;
+}
+
+.tattoo-preview {
+    max-width: 60px;
+    max-height: 60px;
+}

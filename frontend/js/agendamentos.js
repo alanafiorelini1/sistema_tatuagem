@@ -144,7 +144,7 @@ async function listarAgendamentos() {
   agendamentos.forEach(a => {
     // se existir um desenho salvo, monta uma miniatura; senão, mostra "-"
     const imagemHtml = a.desenhoaprovado
-      ? `<img src="${API}/uploads/${a.desenhoaprovado}" style="max-width: 60px; max-height: 60px;">`
+      ? `<img src="${API}/uploads/${a.desenhoaprovado}" class="tattoo-preview">`
       : '-'
 
     corpo.innerHTML += `

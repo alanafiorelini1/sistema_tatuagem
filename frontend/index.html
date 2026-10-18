@@ -3,33 +3,265 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Estúdio de Tatuagem</title>
+  <title>Tattoo Studio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark menu fixed-top">
     <div class="container">
-      <span class="navbar-brand">Estúdio de Tatuagem</span>
+      <a class="navbar-brand fw-bold" href="#topo">Tattoo Studio</a>
+
+      <div class="collapse navbar-collapse justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#tatuadores">Tatuadores</a></li>
+          <li class="nav-item"><a class="nav-link" href="#estilos">Estilos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+        </ul>
+      </div>
+
       <div>
-        <a href="login.html" class="btn btn-light">Entrar</a>
+        <a href="login.html" class="btn btn-outline-light btn-sm px-4">ENTRAR</a>
       </div>
     </div>
   </nav>
 
-  <div class="container py-5 text-center">
-    <h1 class="display-4">Seu estúdio, organizado do seu jeito</h1>
-    <p class="lead">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris.
-    </p>
-  </div>
+  <section id="topo" class="topo text-center text-white d-flex align-items-center justify-content-center">
+    <div class="container">
+      <h1 class="display-3 mb-3">Tattoo Studio</h1>
+      <p class="texto-baixo mb-4">· TATUADORES PROFISSIONAIS ·</p>
+
+      <div>
+        <button class="botao-estilizado" onclick="window.location.href='#galeria'">Galeria</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="tatuadores" class="secao py-5">
+    <div class="container text-center">
+      <p class="subtitulo-secao mb-1">· Um artista para cada cliente ·</p>
+      <h2 class="mb-5">OS TATUADORES</h2>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+          <div class="card-tatuador">
+            <div class="foto-tatuador">
+              <div class="iniciais-tatuador">LM</div>
+              <div class="overlay-card">
+                <h3 class="nome-tatuador">LUCAS MENDES</h3>
+                <p class="estilo-tatuador">Blackwork, Realismo</p>
+                <div class="redes-sociais">
+                  <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+          <div class="card-tatuador">
+            <div class="foto-tatuador">
+              <div class="iniciais-tatuador">CS</div>
+              <div class="overlay-card">
+                <h3 class="nome-tatuador">CARLA SOUZA</h3>
+                <p class="estilo-tatuador">Aquarela</p>
+                <div class="redes-sociais">
+                  <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+          <div class="card-tatuador">
+            <div class="foto-tatuador">
+              <div class="iniciais-tatuador">PL</div>
+              <div class="overlay-card">
+                <h3 class="nome-tatuador">PEDRO LIMA</h3>
+                <p class="estilo-tatuador">Old School</p>
+                <div class="redes-sociais">
+                  <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+          <div class="card-tatuador">
+            <div class="foto-tatuador">
+              <div class="iniciais-tatuador">AS</div>
+              <div class="overlay-card">
+                <h3 class="nome-tatuador">ALAN SILVA</h3>
+                <p class="estilo-tatuador">Blackwork</p>
+                <div class="redes-sociais">
+                  <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+          <div class="card-tatuador">
+            <div class="foto-tatuador">
+              <div class="iniciais-tatuador">MS</div>
+              <div class="overlay-card">
+                <h3 class="nome-tatuador">MARIA SILVA</h3>
+                <p class="estilo-tatuador">Old School</p>
+                <div class="redes-sociais">
+                  <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="estilos" class="secao py-5" style="background-color: #0b0b0b;">
+    <div class="container text-center">
+      <p class="subtitulo-secao mb-1">· explore nossas opções ·</p>
+      <h2 class="mb-5">NOSSOS ESTILOS</h2>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card-estilo">
+            <div class="icone-estilo mb-3">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
+                </path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="titulo-estilo">BLACKWORK</h3>
+            <p class="descricao-estilo">
+              Arte baseada no uso exclusivo de tinta preta, focando em contrastes marcantes, preenchimentos sólidos e
+              grafismos.
+            </p>
+            <a href="#galeria" class="link-estilo">SABER MAIS</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card-estilo">
+            <div class="icone-estilo mb-3">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+              </svg>
+            </div>
+            <h3 class="titulo-estilo">REALISMO</h3>
+            <p class="descricao-estilo">
+              Desenhos extremamente detalhados que reproduzem retratos, animais e paisagens com efeito de profundidade e
+              sombra.
+            </p>
+            <a href="#galeria" class="link-estilo">SABER MAIS</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card-estilo">
+            <div class="icone-estilo mb-3">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                </path>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+              </svg>
+            </div>
+            <h3 class="titulo-estilo">AQUARELA</h3>
+            <p class="descricao-estilo">
+              Efeito fluido de pintura na pele com manchas suaves, gradientes coloridos e contornos leves e expressivos.
+            </p>
+            <a href="#galeria" class="link-estilo">SABER MAIS</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card-estilo">
+            <div class="icone-estilo mb-3">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 3v18"></path>
+                <path d="M3 12h18"></path>
+                <path d="M5.63 5.63l12.74 12.74"></path>
+                <path d="M5.63 18.37L18.37 5.63"></path>
+              </svg>
+            </div>
+            <h3 class="titulo-estilo">OLD SCHOOL</h3>
+            <p class="descricao-estilo">
+              Estilo tradicional americano marcado por traços grossos, paleta de cores primárias e símbolos clássicos
+              marcantes.
+            </p>
+            <a href="#galeria" class="link-estilo">SABER MAIS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="secao py-5">
+    <div class="container text-center">
+      <p class="subtitulo-secao mb-1">· NOSSO TRABALHO ·</p>
+      <h2 class="mb-5">GALERIA DE ARTES</h2>
+
+      <div class="mosaico-referencia">
+        <div class="coluna-mosaico">
+          <div class="item-mosaico item-pequeno">
+            <img src="img/tattoo1.jpg" alt="Tatuagem 1">
+          </div>
+          <div class="item-mosaico item-grande">
+            <img src="img/tattoo2.jpg" alt="Tatuagem 2">
+          </div>
+        </div>
+
+        <div class="coluna-mosaico">
+          <div class="item-mosaico item-grande">
+            <img src="img/tattoo3.jpg" alt="Tatuagem 3">
+          </div>
+          <div class="item-mosaico item-pequeno">
+            <img src="img/tattoo4.jpg" alt="Tatuagem 4">
+          </div>
+        </div>
+
+        <div class="coluna-mosaico">
+          <div class="item-mosaico item-pequeno">
+            <img src="img/tattoo5.jpg" alt="Tatuagem 5">
+          </div>
+          <div class="item-mosaico item-grande">
+            <img src="img/tattoo6.jpg" alt="Tatuagem 6">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 

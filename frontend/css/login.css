@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1, h2 {
+    font-family: 'Eagle Lake', cursive;
+}
+
+.auth-page {
+    max-width: 480px;
+}

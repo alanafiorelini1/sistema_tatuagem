@@ -12,6 +12,38 @@ function protegerPagina() {
   }
 }
 
+function usuarioEhAdmin() {
+  const token = localStorage.getItem('token')
+  const segmentoPayload = token && token.split('.')[1]
+
+  if (!segmentoPayload) return false
+
+  try {
+    const base64 = segmentoPayload.replace(/-/g, '+').replace(/_/g, '/')
+    const payload = JSON.parse(atob(base64.padEnd(Math.ceil(base64.length / 4) * 4, '=')))
+    return payload.tipo === 'admin'
+  } catch {
+    return false
+  }
+}
+
+function avisarAcessoRestrito() {
+  alert('Esta ação é restrita a administradores. Funcionários podem apenas visualizar.')
+}
+
+document.addEventListener('click', (evento) => {
+  if (usuarioEhAdmin() || !(evento.target instanceof Element)) return
+
+  const link = evento.target.closest('a[href]')
+  if (!link) return
+
+  const destino = new URL(link.href, window.location.href)
+  if (destino.pathname.toLowerCase().endsWith('/cadastro.html')) {
+    evento.preventDefault()
+    alert('O cadastro de funcionários é restrito a administradores.')
+  }
+})
+
 // ─── Faz um fetch normal, mas já anexando o token no cabeçalho ───
 async function fetchAutenticado(url, opcoes = {}) {
   const token = localStorage.getItem('token')

@@ -3,49 +3,63 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Estilos — Estúdio de Tatuagem</title>
+  <title>Estilos — Tattoo Studio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/gerenciamento.css">
 </head>
 
-<body class="container py-4">
+<body>
 
-  <nav class="navbar navbar-dark bg-dark mb-4">
+  <nav class="navbar navbar-dark menu fixed-top">
     <div class="container">
-      <span class="navbar-brand">Estúdio de Tatuagem</span>
-      <div>
-        <a href="clientes.html" class="text-light me-3">Clientes</a>
-        <a href="senioridade.html" class="text-light me-3">Senioridade</a>
-        <a href="estilos.html" class="text-light me-3">Estilos</a>
-        <a href="tatuadores.html" class="text-light me-3">Tatuadores</a>
-        <a href="agendamentos.html" class="text-light me-3">Agendamentos</a>
-        <button onclick="sair()" class="btn btn-outline-light btn-sm">Sair</button>
+      <span class="navbar-brand fw-bold">Tattoo Studio</span>
+      <div class="d-flex align-items-center flex-wrap justify-content-end gap-3">
+        <a href="clientes.html" class="nav-link">Clientes</a>
+        <a href="senioridade.html" class="nav-link">Senioridade</a>
+        <a href="estilos.html" class="nav-link active">Estilos</a>
+        <a href="tatuadores.html" class="nav-link">Tatuadores</a>
+        <a href="agendamentos.html" class="nav-link">Agendamentos</a>
+        <button type="button" onclick="sair()" class="btn-sair">
+          <i class="fas fa-sign-out-alt me-1"></i> Sair
+        </button>
       </div>
     </div>
   </nav>
 
-  <h1>Estilos</h1>
+  <main class="container conteudo-pagina">
+    <a href="dashboard.html" class="voltar-dashboard">
+      <i class="fas fa-arrow-left"></i> Voltar ao dashboard
+    </a>
+    <p class="subtitulo-secao mb-1">· GERENCIAMENTO ·</p>
+    <h1 class="mb-4">ESTILOS</h1>
 
-  <form id="form-estilo" class="row g-2 mt-2 mb-4">
+  <div id="aviso-somente-leitura" class="aviso-somente-leitura mb-4 d-none">
+    Modo de consulta: somente administradores podem cadastrar, editar ou excluir estilos.
+  </div>
+  <form id="form-estilo" class="row g-2 mt-2 mb-5">
     <div class="col-md-4">
       <input type="text" id="descricao" class="form-control" placeholder="Descrição (ex: Blackwork)" required>
     </div>
     <div class="col-md-2">
-      <button id="btn-submit-estilo" type="submit" class="btn btn-primary w-100">Cadastrar</button>
+      <button id="btn-submit-estilo" type="submit" class="botao-estilizado w-100">Cadastrar</button>
     </div>
   </form>
 
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Descrição</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody id="corpo-tabela">
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Descrição</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="corpo-tabela">
+      </tbody>
+    </table>
+  </div>
+  </main>
 
   <script src="js/auth.js"></script>
   <script src="js/estilos.js"></script>

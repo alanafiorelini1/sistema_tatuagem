@@ -4,9 +4,10 @@
 #            dos tatuadores (Júnior, Pleno, Sênior).
 # ============================================================
 
-from fastapi import APIRouter      # organiza rotas em grupos
+from fastapi import APIRouter, Depends      # organiza rotas em grupos
 from pydantic import BaseModel     # valida os dados que chegam na API
 from database import conectar      # nossa função de conexão
+from seguranca import verificar_admin
 
 router = APIRouter()               # cria o grupo de rotas
 
@@ -37,7 +38,7 @@ def buscar_senioridade(id: int):
     return senioridade
 
 # POST /senioridade — cadastra uma nova senioridade
-@router.post("")
+@router.post("", dependencies=[Depends(verificar_admin)])
 def criar_senioridade(senioridade: Senioridade):
     conn = conectar()
     cursor = conn.cursor()
@@ -47,7 +48,7 @@ def criar_senioridade(senioridade: Senioridade):
     return {"mensagem": "Senioridade cadastrada com sucesso"}
 
 # PUT /senioridade/{id} — atualiza uma senioridade existente
-@router.put("/{id}")
+@router.put("/{id}", dependencies=[Depends(verificar_admin)])
 def atualizar_senioridade(id: int, senioridade: Senioridade):
     conn = conectar()
     cursor = conn.cursor()
@@ -57,7 +58,7 @@ def atualizar_senioridade(id: int, senioridade: Senioridade):
     return {"mensagem": "Senioridade atualizada com sucesso"}
 
 # DELETE /senioridade/{id} — deleta uma senioridade
-@router.delete("/{id}")
+@router.delete("/{id}", dependencies=[Depends(verificar_admin)])
 def deletar_senioridade(id: int):
     conn = conectar()
     cursor = conn.cursor()

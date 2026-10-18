@@ -11,8 +11,7 @@ function limparFormulario() {
   formTatuador.reset()
   delete formTatuador.dataset.idTatuador
   botaoSubmit.textContent = 'Cadastrar'
-  botaoSubmit.classList.remove('btn-success')
-  botaoSubmit.classList.add('btn-primary')
+  botaoSubmit.classList.remove('btn-sucesso-custom')
 }
 
 // ─── Busca as senioridades na API e preenche o <select> ───
@@ -46,11 +45,11 @@ async function listarTatuadores() {
         <td>${t.cpf}</td>
         <td>${t.email ?? '-'}</td>
         <td>${t.telefone ?? '-'}</td>
-        <td>${t.estilos ?? '-'}</td>
         <td>${t.senioridade}</td>
+        <td>${t.estilos ?? '-'}</td>
         <td>
-          <button class="btn btn-sm btn-warning me-2" onclick='preencherFormularioEdicao(${JSON.stringify(t)})'>Editar</button>
-          <button class="btn btn-sm btn-danger" onclick="deletarTatuador(${t.idtatuador})">Excluir</button>
+          <button class="btn-acao-editar me-2" onclick='preencherFormularioEdicao(${JSON.stringify(t)})'>Editar</button>
+          <button class="btn-acao-excluir" onclick="deletarTatuador(${t.idtatuador})">Excluir</button>
         </td>
       </tr>`
   })
@@ -124,8 +123,7 @@ async function preencherFormularioEdicao(tatuador) {
   })
 
   botaoSubmit.textContent = 'Salvar alteração'
-  botaoSubmit.classList.remove('btn-primary')
-  botaoSubmit.classList.add('btn-success')
+  botaoSubmit.classList.add('btn-sucesso-custom')
 }
 
 // ─── Exclui um tatuador ───

@@ -3,36 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tatuadores — Estúdio de Tatuagem</title>
+    <title>Tatuadores — Tattoo Studio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/tatuadores.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/gerenciamento.css">
 </head>
 
-<body class="container py-4">
-    <nav class="navbar navbar-dark bg-dark mb-4">
+<body>
+    <nav class="navbar navbar-dark menu fixed-top">
         <div class="container">
-            <span class="navbar-brand">Estúdio de Tatuagem</span>
-            <div>
-                <a href="clientes.html" class="text-light me-3">Clientes</a>
-                <a href="senioridade.html" class="text-light me-3">Senioridade</a>
-                <a href="estilos.html" class="text-light me-3">Estilos</a>
-                <a href="tatuadores.html" class="text-light me-3">Tatuadores</a>
-                <a href="agendamentos.html" class="text-light me-3">Agendamentos</a>
-                <button onclick="sair()" class="btn btn-outline-light btn-sm">Sair</button>
+            <span class="navbar-brand fw-bold">Tattoo Studio</span>
+            <div class="d-flex align-items-center flex-wrap justify-content-end gap-3">
+                <a href="clientes.html" class="nav-link">Clientes</a>
+                <a href="senioridade.html" class="nav-link">Senioridade</a>
+                <a href="estilos.html" class="nav-link">Estilos</a>
+                <a href="tatuadores.html" class="nav-link active">Tatuadores</a>
+                <a href="agendamentos.html" class="nav-link">Agendamentos</a>
+                <button type="button" onclick="sair()" class="btn-sair">
+                    <i class="fas fa-sign-out-alt me-1"></i> Sair
+                </button>
             </div>
         </div>
     </nav>
 
-    <h1>Tatuadores</h1>
+    <main class="container conteudo-pagina">
+    <a href="dashboard.html" class="voltar-dashboard">
+        <i class="fas fa-arrow-left"></i> Voltar ao dashboard
+    </a>
+    <p class="subtitulo-secao mb-1">· GERENCIAMENTO ·</p>
+    <h1 class="mb-4">TATUADORES</h1>
 
-    <div class="col-md-12">
+    <div class="mb-3">
         <label class="form-label">Estilos que domina</label>
         <div id="lista-estilos" class="d-flex flex-wrap gap-3">
             <!-- os checkboxes são preenchidos pelo JavaScript -->
         </div>
     </div>
     <!-- Formulário para cadastrar novo tatuador -->
-    <form id="form-tatuador" class="row g-2 mt-2 mb-4">
+    <form id="form-tatuador" class="row g-2 mt-2 mb-5">
         <div class="col-md-3">
             <input type="text" id="nometatuador" class="form-control" placeholder="Nome" required>
         </div>
@@ -52,28 +60,30 @@
             </select>
         </div>
         <div class="col-md-2">
-            <button id="btn-submit-tatuador" type="submit" class="btn btn-primary w-100">Cadastrar</button>
+            <button id="btn-submit-tatuador" type="submit" class="botao-estilizado w-100">Cadastrar</button>
         </div>
     </form>
 
     <!-- Tabela onde os tatuadores vão aparecer -->
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>E-mail</th>
-                <th>Telefone</th>
-                <th>Senioridade</th>
-                <th>Estilos</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody id="corpo-tabela">
-            <!-- os tatuadores vão aparecer aqui -->
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Senioridade</th>
+                    <th>Estilos</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="corpo-tabela">
+            </tbody>
+        </table>
+    </div>
+    </main>
 
     <script src="js/auth.js"></script>
     <script src="js/tatuadores.js"></script>

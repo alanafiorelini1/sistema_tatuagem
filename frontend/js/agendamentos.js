@@ -12,8 +12,7 @@ function limparFormulario() {
   formAgendamento.reset()
   delete formAgendamento.dataset.idAgendamento
   botaoSubmit.textContent = 'Cadastrar'
-  botaoSubmit.classList.remove('btn-success')
-  botaoSubmit.classList.add('btn-primary')
+  botaoSubmit.classList.remove('btn-sucesso-custom')
   blocoStatus.style.display = 'none'   // esconde o status de novo — cadastro não usa esse campo
 }
 
@@ -65,8 +64,8 @@ async function listarAgendamentos() {
         <td>${a.valortatuagem ?? '-'}</td>
         <td>${a.status}</td>
         <td>
-          <button class="btn btn-sm btn-warning me-2" onclick='preencherFormularioEdicao(${JSON.stringify(a)})'>Editar</button>
-          <button class="btn btn-sm btn-danger" onclick="deletarAgendamento(${a.idagendamento})">Excluir</button>
+          <button class="btn-acao-editar me-2" onclick='preencherFormularioEdicao(${JSON.stringify(a)})'>Editar</button>
+          <button class="btn-acao-excluir" onclick="deletarAgendamento(${a.idagendamento})">Excluir</button>
         </td>
       </tr>`
   })
@@ -158,8 +157,8 @@ async function listarAgendamentos() {
         <td>${a.status}</td>
         <td>${imagemHtml}</td>
         <td>
-          <button class="btn btn-sm btn-warning me-2" onclick='preencherFormularioEdicao(${JSON.stringify(a)})'>Editar</button>
-          <button class="btn btn-sm btn-danger" onclick="deletarAgendamento(${a.idagendamento})">Excluir</button>
+          <button class="btn-acao-editar me-2" onclick='preencherFormularioEdicao(${JSON.stringify(a)})'>Editar</button>
+          <button class="btn-acao-excluir" onclick="deletarAgendamento(${a.idagendamento})">Excluir</button>
         </td>
       </tr>`
   })

@@ -4,9 +4,10 @@
 #            (Blackwork, Aquarela, Realismo, Old School...).
 # ============================================================
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from database import conectar
+from seguranca import verificar_admin
 
 router = APIRouter()
 
@@ -37,7 +38,7 @@ def buscar_estilo(id: int):
     return estilo
 
 # POST /estilos — cadastra um novo estilo
-@router.post("")
+@router.post("", dependencies=[Depends(verificar_admin)])
 def criar_estilo(estilo: Estilo):
     conn = conectar()
     cursor = conn.cursor()
@@ -47,7 +48,7 @@ def criar_estilo(estilo: Estilo):
     return {"mensagem": "Estilo cadastrado com sucesso"}
 
 # PUT /estilos/{id} — atualiza um estilo existente
-@router.put("/{id}")
+@router.put("/{id}", dependencies=[Depends(verificar_admin)])
 def atualizar_estilo(id: int, estilo: Estilo):
     conn = conectar()
     cursor = conn.cursor()
@@ -57,7 +58,7 @@ def atualizar_estilo(id: int, estilo: Estilo):
     return {"mensagem": "Estilo atualizado com sucesso"}
 
 # DELETE /estilos/{id} — deleta um estilo
-@router.delete("/{id}")
+@router.delete("/{id}", dependencies=[Depends(verificar_admin)])
 def deletar_estilo(id: int):
     conn = conectar()
     cursor = conn.cursor()

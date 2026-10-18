@@ -7,8 +7,7 @@ function limparFormulario() {
   formCliente.reset()
   delete formCliente.dataset.idCliente
   botaoSubmit.textContent = 'Cadastrar'
-  botaoSubmit.classList.remove('btn-success')
-  botaoSubmit.classList.add('btn-primary')
+  botaoSubmit.classList.remove('btn-sucesso-custom')
 }
 
 async function listarClientes() {
@@ -28,8 +27,8 @@ async function listarClientes() {
         <td>${c.cidade ?? '-'}</td>
         <td>${c.uf ?? '-'}</td>
         <td>
-          <button class="btn btn-sm btn-warning me-2" onclick='preencherFormularioEdicao(${JSON.stringify(c)})'>Editar</button>
-          <button class="btn btn-sm btn-danger" onclick="deletarCliente(${c.idcliente})">Excluir</button>
+          <button class="btn-acao-editar me-2" onclick='preencherFormularioEdicao(${JSON.stringify(c)})'>Editar</button>
+          <button class="btn-acao-excluir" onclick="deletarCliente(${c.idcliente})">Excluir</button>
         </td>
       </tr>`
   })
@@ -78,8 +77,7 @@ function preencherFormularioEdicao(cliente) {
 
   formCliente.dataset.idCliente = cliente.idcliente
   botaoSubmit.textContent = 'Salvar alteração'
-  botaoSubmit.classList.remove('btn-primary')
-  botaoSubmit.classList.add('btn-success')
+  botaoSubmit.classList.add('btn-sucesso-custom')
 }
 
 async function deletarCliente(id) {

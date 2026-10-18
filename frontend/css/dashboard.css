@@ -1,13 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Google Sans', sans-serif;
+    background-color: #0d0d0d;
+    background: linear-gradient(to bottom, #0d0d0d 0%, rgba(13, 13, 13, 0.95) 100%),
+        url('../img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    min-height: 100vh;
 }
 
-h1, h2 {
+.menu {
+    background-color: rgba(13, 13, 13, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.navbar-brand {
     font-family: 'Eagle Lake', cursive;
+    letter-spacing: 1px;
+}
+
+.conteudo-painel {
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.subtitulo-secao {
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    color: #888888;
+    text-transform: uppercase;
+}
+
+.titulo-painel {
+    font-family: 'Eagle Lake', cursive;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.card-painel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+    background-color: rgba(18, 18, 18, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.card-painel:hover {
+    background-color: rgba(30, 30, 30, 0.95);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-5px);
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+.icone-card {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #dddddd;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card-painel:hover .icone-card {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+.titulo-card {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
 }

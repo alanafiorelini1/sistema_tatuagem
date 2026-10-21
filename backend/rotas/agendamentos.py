@@ -9,7 +9,11 @@ from fastapi import APIRouter, UploadFile, File
 from pydantic import BaseModel
 from typing import Optional
 from database import conectar
-import os
+from pathlib import Path
+from uuid import uuid4
+
+UPLOADS_DIR = Path(__file__).resolve().parent.parent / "uploads"
+UPLOADS_DIR.mkdir(exist_ok=True)
 
 router = APIRouter()
 
@@ -114,11 +118,12 @@ def deletar_agendamento(id: int):
 # POST /agendamentos/{id}/desenho — recebe a imagem do desenho aprovado e associa ao agendamento
 @router.post("/{id}/desenho")
 async def upload_desenho(id: int, arquivo: UploadFile = File(...)):
-    nome_arquivo = f"{id}_{arquivo.filename}"   # o id na frente evita nomes repetidos entre agendamentos
-    caminho = os.path.join("uploads", nome_arquivo)
+    extensao = Path(arquivo.filename or "").suffix
+    nome_arquivo = f"{id}_{uuid4().hex}{extensao}"
+    caminho = UPLOADS_DIR / nome_arquivo
 
     conteudo = await arquivo.read()       # lê o conteúdo do arquivo enviado
-    with open(caminho, "wb") as f:        # "wb" = write binary — é uma imagem, não texto
+    with caminho.open("wb") as f:          # "wb" = write binary — é uma imagem, não texto
         f.write(conteudo)
 
     conn = conectar()

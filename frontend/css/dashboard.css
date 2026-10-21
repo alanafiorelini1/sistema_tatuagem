@@ -8,7 +8,7 @@ html {
 body {
     font-family: 'Google Sans', sans-serif;
     background-color: #0d0d0d;
-    background: linear-gradient(to bottom, #0d0d0d 0%, rgba(13, 13, 13, 0.95) 100%),
+    background: linear-gradient(to bottom, #0d0d0dbe 0%, rgba(13, 13, 13, 0.651) 100%),
         url('../img/background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #ffffff;

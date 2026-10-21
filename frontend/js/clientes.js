@@ -12,6 +12,11 @@ function limparFormulario() {
 
 async function listarClientes() {
   const resposta = await fetchAutenticado(`${API}/clientes`)
+  if (!resposta.ok) {
+    alert(`Não foi possível carregar os clientes. Erro ${resposta.status}.`)
+    return
+  }
+
   const clientes = await resposta.json()
 
   const corpo = document.getElementById('corpo-tabela')
@@ -51,17 +56,25 @@ formCliente.addEventListener('submit', async (e) => {
   const idCliente = formCliente.dataset.idCliente
 
   if (idCliente) {
-    await fetch(`${API}/clientes/${idCliente}`, {
+    const resposta = await fetchAutenticado(`${API}/clientes/${idCliente}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(cliente)
     })
+    if (!resposta.ok) {
+      alert(`Não foi possível atualizar o cliente. Erro ${resposta.status}: ${await resposta.text()}`)
+      return
+    }
   } else {
-    await fetch(`${API}/clientes`, {
+    const resposta = await fetchAutenticado(`${API}/clientes`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(cliente)
     })
+    if (!resposta.ok) {
+      alert(`Não foi possível cadastrar o cliente. Erro ${resposta.status}: ${await resposta.text()}`)
+      return
+    }
   }
 
   limparFormulario()
@@ -83,6 +96,11 @@ function preencherFormularioEdicao(cliente) {
 async function deletarCliente(id) {
   if (!confirm('Tem certeza que deseja excluir este cliente?')) return
 
-  await fetch(`${API}/clientes/${id}`, { method: 'DELETE' })
+  const resposta = await fetchAutenticado(`${API}/clientes/${id}`, { method: 'DELETE' })
+  if (!resposta.ok) {
+    alert(`Não foi possível excluir o cliente. Erro ${resposta.status}: ${await resposta.text()}`)
+    return
+  }
+
   listarClientes()
 }

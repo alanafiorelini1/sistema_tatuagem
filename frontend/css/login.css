@@ -107,21 +107,3 @@ body {
 .botao-estilizado:active {
     transform: scale(0.98);
 }
-
-.texto-rodape {
-    font-size: 0.85rem;
-    color: #888888;
-}
-
-.link-auth {
-    color: #ffffff;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 2px;
-    transition: border-color 0.3s ease;
-}
-
-.link-auth:hover {
-    color: #ffffff;
-    border-bottom-color: #ffffff;
-}
